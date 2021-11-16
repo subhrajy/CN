@@ -12,12 +12,6 @@
 #include "ctype.h"
 
 
-void do_processing(int sock)
-{
-
-}
-
-
 int main(int argc, char const *argv[]) {
     int sockfd, newsockfd, portno, clilen, pid, num1, num2, result;
     char op;
@@ -42,9 +36,8 @@ int main(int argc, char const *argv[]) {
         exit(1);
     }
 
-    printf("\nServer listening ...");
     listen(sockfd, 2);
-
+    printf("\nServer listening ...");
 
     clilen = sizeof(cli_addr);
     newsockfd = accept(sockfd, (struct sockaddr*) &cli_addr, (socklen_t*) &clilen);
